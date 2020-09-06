@@ -16,9 +16,9 @@ class Checkout extends Component {
         let price = 0;
         for (const [name, value] of query.entries()) {
             if (name === 'price') {
-                price = parseInt(value, 10);
+                price = parseFloat(value);
             } else {
-                ingredients[name] = parseInt(value, 10);
+                ingredients[name] = parseFloat(value);
             }
         }
         this.setState({ ingredients, totalPrice: price });
@@ -44,7 +44,7 @@ class Checkout extends Component {
                     render={(props) => {
                         return <ContactData
                             ingredients={this.state.ingredients}
-                            price={this.state.totalPrice}
+                            price={this.state.totalPrice.toFixed(2)}
                             {...props} />;
                     }} />
             </div>
