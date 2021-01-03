@@ -15,6 +15,7 @@ export function* checkAuthTimeoutSaga(action) {
     yield put(actions.logout());
 }
 
+// No worries -- this token has been revoked
 const AUTH_API_KEY = 'AIzaSyCXyVanDkgtBuJG5PvJZesNYnTOlp6_nZk';
 
 export function* authUserSaga(action) {
